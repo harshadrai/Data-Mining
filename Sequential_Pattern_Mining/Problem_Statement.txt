@@ -1,0 +1,64 @@
+In natural language processing, it is important to identify "phrases" from text. By considering phrases as word sequences of fixed order that are frequent in the corpus, one can apply the sequential pattern mining algorithm Prefix-Span or similar to solve the problem.
+
+In this assignment, you will be given raw text sentences and you need to implement Prefix-Span or other equivalent sequential pattern mining algorithm to find frequent phrases from the text.
+
+You can assume that the input is in English only. As the first step, please remove less important words (stop words) from the sentences. You can use the english stopwords list from below.
+
+a an are as at by be for from
+has he in is it its of on that the
+to was were will with
+Then, convert all words to lower case to remove ambiguity. Now, start building the sequence database. Specifically, process conjunction joiner ("and") by grouping joined words into itemsets. That is, for example, make "A, B, and C" into (A, B, C) in sequence transaction.
+
+Input Format
+
+The input dataset is raw text sentences.
+
+The first line of the input corresponds to the minimum support.
+
+Each following line of the input corresponds to one sentence. Words in each transaction are seperated by a space.
+
+Please refer to the sample input below. In sample input 0, the minimum support is 3, and the dataset contains 3 sentences and 5 words (a, b, c, d, e, f and g).
+
+Constraints
+
+NA
+
+Output Format
+
+The output are the longest length frequent phrases you mined out from the input dataset. This means that you have to report the phrase with the longest length which satisfies the minimum support criterion.
+
+Each line of the output should be in the format:
+
+Support [frequent phrase]
+Support [frequent phrase]
+......
+The frequent phrases should be ordered according to their support from largest to smallest. Ties should be resolved by ordering the frequent phrases according to the alphabetical order.
+
+Please refer to the sample output below. In sample output 0, the four phrases are the sequential frequent phrases calcualted after converting b and c into (bc).
+
+Sample Input 0
+
+3
+b and c d and e f
+b c d e f
+b and c d b e g f
+Sample Output 0
+
+3 [b d f]
+3 [b e f]
+3 [c d f]
+3 [c e f]
+Sample Input 1
+
+4
+Clustering and classification are important problems in machine learning.
+There are many machine learning algorithms for classification and clustering problems.
+Classification problems require training data.
+Most clustering problems require user-specified group number.
+SVM, LogisticRegression and NaiveBayes are machine learning algorithms for classification problems.
+k-means, AGNES and DBSCAN are clustering algorithms.
+Dimension reduction methods such as PCA are also learning algorithms for clustering problems.
+Sample Output 1
+
+4 [classification problems]
+4 [clustering problems]
