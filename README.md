@@ -1,2 +1,2 @@
 # Data-Mining
-Codes for assignments and project 
+Codes for algorithms in data mining
